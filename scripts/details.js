@@ -159,7 +159,7 @@ function setupEventListeners() {
             currentImageType = tab.dataset.type;
             document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            document.querySelector('.gallery-image').src = currentHero.images[currentImageType];
+            document.querySelector('.gallery-image').src = window.location.origin + '/mlbb-hero-cards/' + currentHero.images[currentImageType];
         });
     });
 
