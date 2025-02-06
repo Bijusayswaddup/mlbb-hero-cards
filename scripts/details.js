@@ -150,7 +150,7 @@ function animateProgressBars() {
 function setupEventListeners() {
     // Back button
     backButton.addEventListener('click', () => {
-        window.location.href = '${window.location.origin}/mlbb-hero-cards/index.html';
+        window.location.href = 'index.html';
     });
 
     // Image tabs
