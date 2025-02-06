@@ -1,5 +1,5 @@
 // ========== CONFIGURATION ==========
-const HEROES_DATA_URL = '/data/heroes.json';
+const HEROES_DATA_URL = '/mlbb-hero-cards/data/heroes.json';
 const LOADING_TIPS = [
     "Analyzing hero patterns...",
     "Optimizing skill trees...",
