@@ -282,6 +282,15 @@ body {
     padding: 1rem;
   }
 
+  .grid {
+  display: block;
+}
+
+  .image-gallery {
+    padding: 0;
+    padding-right: 5px;
+  }
+
   .hero-name {
     font-size: 2rem;
   }
