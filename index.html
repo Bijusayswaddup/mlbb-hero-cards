@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLBB Hero Cards</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link id="css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cssLink = document.getElementById('css');
+            cssLink.href = window.location.origin + "/styles/main.css";
+        });
+    </script>
 </head>
 
 <body>
