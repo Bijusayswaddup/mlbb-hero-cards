@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/details.css">
+    <link id="css" rel="stylesheet" href="/styles/details.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cssLink = document.getElementById('css');
+            const jsLink = document.getElementById('js');
+            cssLink.href = window.location.origin + "/mlbb-hero-cards/styles/main.css";
+            jsLink.src = window.location.origin + "/mlbb-hero-cards/scripts/main.js";
+        });
+    </script>
 </head>
 <body>
     <div class="hero-details-container">
@@ -18,6 +26,6 @@
         </div>
     </div>
 
-    <script src="scripts/details.js"></script>
+    <script id="js" src="scripts/details.js"></script>
 </body>
 </html>
