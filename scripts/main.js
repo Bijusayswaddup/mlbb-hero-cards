@@ -114,7 +114,7 @@ function filterAndRender() {
 function renderHeroGrid(heroes) {
     heroGrid.innerHTML = heroes.map(hero => `
         <div class="hero-card" data-id="${hero.id}">
-            <img src="${hero.icon}" alt="${hero.name}" loading="lazy">
+            <img src="${window.location.origin}/mlbb-hero-cards/${hero.icon}" alt="${hero.name}" loading="lazy">
             <h3>${hero.name}</h3>
             <p class="hero-id">#${hero.id.toString().padStart(3, '0')}</p>
             <span class="hero-role">${hero.role}</span>
