@@ -1,5 +1,5 @@
 // ========== CONFIGURATION ==========
-const HEROES_DATA_URL = '/data/heroes.json';
+const HEROES_DATA_URL = '/mlbb-hero-cards/data/heroes.json';
 const DEFAULT_HERO_ID = 1; // Fallback if no ID found
 
 // ========== STATE ==========
@@ -57,7 +57,7 @@ function renderHeroDetails() {
                     </button>
                 </div>
                 <img class="gallery-image" 
-                    src="${currentHero.images[currentImageType]}" 
+                    src="${window.location.origin}/mlbb-hero-cards/${currentHero.images[currentImageType]}" 
                     alt="${currentHero.name}">
             </section>
 
@@ -106,7 +106,7 @@ function renderSkillsSection() {
             ${currentHero.skills.map((skill, index) => `
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <img src="${skill.icon}" alt="${skill.name}">
+                        <img src="${window.location.origin}/mlbb-hero-cards/${skill.icon}" alt="${skill.name}">
                     </div>
                     <div class="skill-info">
                         <h3 class="skill-name">${skill.name}</h3>
@@ -128,7 +128,7 @@ function renderSkinCarousel() {
         ${currentHero.skins.map((skin, index) => `
             <div class="skin-card" data-index="${index}">
                 <img class="skin-image" 
-                     src="${skin.image}" 
+                     src="${window.location.origin}/mlbb-hero-cards/${skin.image}" 
                      alt="${skin.name}">
                 <div class="skin-info">
                     <h3 class="skin-name">${skin.name}</h3>
@@ -150,7 +150,7 @@ function animateProgressBars() {
 function setupEventListeners() {
     // Back button
     backButton.addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href = '${window.location.origin}/mlbb-hero-cards/index.html';
     });
 
     // Image tabs
@@ -201,7 +201,7 @@ function handleError(error) {
         <div class="error-state">
             <h2>Hero Data Unavailable</h2>
             <p>${error.message}</p>
-            <button onclick="window.location.href='index.html'">Return to Heroes</button>
+            <button onclick="window.location.href='${window.location.origin}/mlbb-hero-cards/index.html'">Return to Heroes</button>
         </div>
     `;
 }
