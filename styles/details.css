@@ -1,0 +1,313 @@
+/* ========== VARIABLES ========== */
+:root {
+  --neon-blue: #00f3ff;
+  --neon-purple: #bc13fe;
+  --dark-bg: #0a0a12;
+  --cyber-red: #ff4655;
+  --cyber-gradient: linear-gradient(
+    145deg,
+    #0f0c29 0%,
+    #302b63 50%,
+    #24243e 100%
+  );
+  --cyber-border: 2px solid var(--neon-blue);
+  --font-primary: "Orbitron", sans-serif;
+}
+
+body {
+  padding-top: 80px;
+  color: white;
+}
+
+/* ========== BASE STYLES ========== */
+.hero-details-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--cyber-gradient);
+  border-radius: 20px;
+  border: var(--cyber-border);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-details-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(0, 243, 255, 0.1) 50%,
+    transparent 75%
+  );
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========== BACK BUTTON ========== */
+.neon-back-btn {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--cyber-gradient);
+  border: var(--cyber-border);
+  border-radius: 30px;
+  color: var(--neon-blue);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.neon-back-btn::before {
+  content: "";
+  font-size: 1.2em;
+  transition: transform 0.3s;
+}
+
+.neon-back-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 0 25px var(--neon-blue);
+  color: white;
+}
+
+/* ========== HERO CONTENT ========== */
+.hero-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-bottom: var(--cyber-border);
+}
+
+.hero-name {
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px var(--neon-blue);
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  color: var(--neon-blue);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ========== IMAGE GALLERY ========== */
+.image-gallery {
+    padding: 20px;
+  position: relative;
+  margin: 2rem 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.gallery-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-tab {
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: var(--cyber-border);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.gallery-tab.active {
+  background: var(--neon-blue);
+  color: var(--neon-purple);
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: var(--cyber-border);
+  animation: imageAppear 0.5s ease-out;
+  object-fit: contain;
+}
+
+@keyframes imageAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== STATS & SKILLS ========== */
+.stats-section {
+  display: block;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  /* gap: 2rem; */
+  margin: 3rem 0;
+}
+
+.stat-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: var(--cyber-border);
+  margin-bottom: 15px;
+}
+
+.stats-section h2{
+    text-transform: uppercase;
+    justify-self: center;
+}
+
+.stat-label {
+  color: var(--neon-blue);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--neon-blue);
+  width: 0;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: progressGlow 2s infinite;
+}
+
+@keyframes progressGlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========== SKINS CAROUSEL ========== */
+.skins-section {
+  margin: 3rem 0;
+}
+
+.skins-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.skin-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #1a1a2e;
+  border-radius: 15px;
+  border: var(--cyber-border);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.skin-card:hover {
+  transform: translateY(-5px);
+}
+
+.skin-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.skin-name {
+  padding: 1rem;
+  text-align: center;
+  color: var(--neon-blue);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .hero-details-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+  }
+
+  .gallery-image {
+    height: 300px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .skins-carousel {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image {
+    height: 200px;
+  }
+
+  .neon-back-btn {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

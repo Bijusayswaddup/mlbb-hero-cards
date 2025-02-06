@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Hero Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="cyber-spinner"></div>
+        <div id="loading-tips" class="loading-tips">Initializing Hero Database...</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container hidden">
+        <!-- Header Section -->
+        <header class="cyber-header">
+            <h1 class="neon-title">
+                <span class="neon-accent">MLBB</span> HERO CARDS
+            </h1>
+
+            <!-- Search and Filters -->
+            <div class="search-filters">
+                <div class="search-wrapper">
+                    <input type="text" id="search" class="cyber-search" placeholder="SEARCH HEROES..."
+                        autocomplete="off">
+                    <div class="search-icon">⚡</div>
+                </div>
+
+                <div class="role-filters">
+                    <div class="filter-group">
+                        <input type="radio" name="role" id="all" value="all" checked>
+                        <label for="all" class="cyber-radio">ALL</label>
+                        
+                        <input type="radio" name="role" id="tank" value="Tank">
+                        <label for="tank" class="cyber-radio">TANK</label>
+
+                        <input type="radio" name="role" id="mage" value="Mage">
+                        <label for="mage" class="cyber-radio">MAGE</label>
+
+                        <input type="radio" name="role" id="marksman" value="Marksman">
+                        <label for="marksman" class="cyber-radio">Marksman</label>
+
+                        <input type="radio" name="role" id="assassin" value="Assassin">
+                        <label for="assassin" class="cyber-radio">ASSASSIN</label>
+
+                        <input type="radio" name="role" id="support" value="Support">
+                        <label for="support" class="cyber-radio">SUPPORT</label>
+
+                        <input type="radio" name="role" id="fighter" value="Fighter">
+                        <label for="fighter" class="cyber-radio">Fighter</label>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Grid -->
+        <main id="hero-grid" class="hero-grid"></main>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

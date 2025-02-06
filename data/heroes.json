@@ -1,0 +1,416 @@
+[
+    {
+        "id": 1,
+        "name": "Layla",
+        "role": "Marksman",
+        "icon": "/assets/images/heroes/layla-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/layla-model.png",
+            "splash": "/assets/images/heroes/layla-splash.jpg"
+        },
+        "stats": {
+            "attack": 9,
+            "defense": 2,
+            "movement-speed": 5,
+            "atk-speed": 7
+        },
+        "skills": [
+            {
+                "name": "Malefic Gun",
+                "icon": "/assets/images/skills/layla-skill1.jpg",
+                "description": "Fires a long-range shot dealing 250(+100% Physical Attack) physical damage",
+                "cooldown": 8,
+                "manaCost": 60
+            },
+            {
+                "name": "Vacuum Arrow",
+                "icon": "/assets/images/skills/layla-skill2.jpg",
+                "description": "Fires a vacuum arrow that slows enemies by 30%",
+                "cooldown": 10,
+                "manaCost": 70
+            }
+        ],
+        "skins": [
+            {
+                "name": "Basic",
+                "image": "/assets/images/skins/layla-skin1.jpg"
+            },
+            {
+                "name": "Blaster Girl",
+                "image": "/assets/images/skins/layla-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Alucard",
+        "role": "Fighter",
+        "icon": "/assets/images/heroes/alucard-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/alucard-model.png",
+            "splash": "/assets/images/heroes/alucard-splash.jpg"
+        },
+        "stats": {
+            "attack": 8,
+            "defense": 6,
+            "movement-speed": 7,
+            "atk-speed": 3
+        },
+        "skills": [
+            {
+                "name": "Groundsplitter",
+                "icon": "/assets/images/skills/alucard-skill1.jpg",
+                "description": "Leaps to target location dealing 200(+120% Physical Attack) physical damage",
+                "cooldown": 9,
+                "manaCost": 80
+            },
+            {
+                "name": "Whirling Smash",
+                "icon": "/assets/images/skills/alucard-skill2.jpg",
+                "description": "Spins dealing 300(+150% Physical Attack) physical damage",
+                "cooldown": 12,
+                "manaCost": 100
+            }
+        ],
+        "skins": [
+            {
+                "name": "Demon Lord",
+                "image": "/assets/images/skins/alucard-skin1.jpg"
+            },
+            {
+                "name": "Fiery Inferno",
+                "image": "/assets/images/skins/alucard-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Miya",
+        "role": "Marksman",
+        "icon": "/assets/images/heroes/miya-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/miya-model.png",
+            "splash": "/assets/images/heroes/miya-splash.jpg"
+        },
+        "stats": {
+            "attack": 8,
+            "defense": 3,
+            "movement-speed": 6,
+            "atk-speed": 8
+        },
+        "skills": [
+            {
+                "name": "Moonlight Arrow",
+                "icon": "/assets/images/skills/miya-skill1.jpg",
+                "description": "Fires a moonlight arrow dealing 180(+80% Physical Attack) physical damage",
+                "cooldown": 7,
+                "manaCost": 50
+            },
+            {
+                "name": "Turret Mode",
+                "icon": "/assets/images/skills/miya-skill2.jpg",
+                "description": "Enters turret mode increasing attack speed by 40%",
+                "cooldown": 15,
+                "manaCost": 90
+            }
+        ],
+        "skins": [
+            {
+                "name": "Moonlight Archer",
+                "image": "/assets/images/skins/miya-skin1.jpg"
+            },
+            {
+                "name": "Starlight Princess",
+                "image": "/assets/images/skins/miya-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Zilong",
+        "role": "Fighter",
+        "icon": "/assets/images/heroes/zilong-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/zilong-model.png",
+            "splash": "/assets/images/heroes/zilong-splash.jpg"
+        },
+        "stats": {
+            "attack": 7,
+            "defense": 5,
+            "movement-speed": 9,
+            "atk-speed": 7
+        },
+        "skills": [
+            {
+                "name": "Spear Flip",
+                "icon": "/assets/images/skills/zilong-skill1.jpg",
+                "description": "Flips enemy over shoulder dealing 250(+120% Physical Attack) physical damage",
+                "cooldown": 10,
+                "manaCost": 70
+            },
+            {
+                "name": "Spear Strike",
+                "icon": "/assets/images/skills/zilong-skill2.jpg",
+                "description": "Charges forward dealing 300(+150% Physical Attack) physical damage",
+                "cooldown": 12,
+                "manaCost": 90
+            }
+        ],
+        "skins": [
+            {
+                "name": "Dragon Boy",
+                "image": "/assets/images/skins/zilong-skin1.jpg"
+            },
+            {
+                "name": "Imperial Spearman",
+                "image": "/assets/images/skins/zilong-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Eudora",
+        "role": "Mage",
+        "icon": "/assets/images/heroes/eudora-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/eudora-model.png",
+            "splash": "/assets/images/heroes/eudora-splash.jpg"
+        },
+        "stats": {
+            "attack": 9,
+            "defense": 3,
+            "speed": 5
+        },
+        "skills": [
+            {
+                "name": "Lightning Bolt",
+                "icon": "/assets/images/skills/eudora-skill1.jpg",
+                "description": "Strikes target with lightning dealing 400(+180% Magic Power) magic damage",
+                "cooldown": 8,
+                "manaCost": 100
+            },
+            {
+                "name": "Thunderstruck",
+                "icon": "/assets/images/skills/eudora-skill2.jpg",
+                "description": "Summons thunderstorm dealing 350(+150% Magic Power) magic damage",
+                "cooldown": 15,
+                "manaCost": 120
+            }
+        ],
+        "skins": [
+            {
+                "name": "Lightning Sorceress",
+                "image": "/assets/images/skins/eudora-skin1.jpg"
+            },
+            {
+                "name": "Thunder Fury",
+                "image": "/assets/images/skins/eudora-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Franco",
+        "role": "Tank",
+        "icon": "/assets/images/heroes/franco-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/franco-model.png",
+            "splash": "/assets/images/heroes/franco-splash.jpg"
+        },
+        "stats": {
+            "attack": 5,
+            "defense": 9,
+            "speed": 4
+        },
+        "skills": [
+            {
+                "name": "Iron Hook",
+                "icon": "/assets/images/skills/franco-skill1.jpg",
+                "description": "Throws hook pulling enemy to Franco dealing 400(+150% Physical Attack) physical damage",
+                "cooldown": 14,
+                "manaCost": 110
+            },
+            {
+                "name": "Bloody Hunt",
+                "icon": "/assets/images/skills/franco-skill2.jpg",
+                "description": "Suppresses target enemy for 1.8 seconds",
+                "cooldown": 50,
+                "manaCost": 150
+            }
+        ],
+        "skins": [
+            {
+                "name": "Iron Guardian",
+                "image": "/assets/images/skins/franco-skin1.jpg"
+            },
+            {
+                "name": "Hellish Warden",
+                "image": "/assets/images/skins/franco-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Gatotkaca",
+        "role": "Tank",
+        "icon": "/assets/images/heroes/gatotkaca-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/gatotkaca-model.png",
+            "splash": "/assets/images/heroes/gatotkaca-splash.jpg"
+        },
+        "stats": {
+            "attack": 4,
+            "defense": 9,
+            "speed": 5
+        },
+        "skills": [
+            {
+                "name": "Steel Bones",
+                "icon": "/assets/images/skills/gatotkaca-skill1.jpg",
+                "description": "Converts 200% lost HP into physical attack",
+                "cooldown": 10,
+                "manaCost": 80
+            },
+            {
+                "name": "Unbreakable",
+                "icon": "/assets/images/skills/gatotkaca-skill2.jpg",
+                "description": "Gains shield absorbing 500(+150% Magic Power) damage",
+                "cooldown": 18,
+                "manaCost": 120
+            }
+        ],
+        "skins": [
+            {
+                "name": "Steel Guardian",
+                "image": "/assets/images/skins/gatotkaca-skin1.jpg"
+            },
+            {
+                "name": "Sky Guardian",
+                "image": "/assets/images/skins/gatotkaca-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Lesley",
+        "role": "Marksman",
+        "icon": "/assets/images/heroes/lesley-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/lesley-model.png",
+            "splash": "/assets/images/heroes/lesley-splash.jpg"
+        },
+        "stats": {
+            "attack": 9,
+            "defense": 2,
+            "speed": 6
+        },
+        "skills": [
+            {
+                "name": "Lethal Shot",
+                "icon": "/assets/images/skills/lesley-skill1.jpg",
+                "description": "Deals 400(+200% Physical Attack) physical damage to single target",
+                "cooldown": 12,
+                "manaCost": 100
+            },
+            {
+                "name": "Master of Camouflage",
+                "icon": "/assets/images/skills/lesley-skill2.jpg",
+                "description": "Enters camouflage state for 5 seconds",
+                "cooldown": 20,
+                "manaCost": 120
+            }
+        ],
+        "skins": [
+            {
+                "name": "Nitro Trooper",
+                "image": "/assets/images/skins/lesley-skin1.jpg"
+            },
+            {
+                "name": "Angel of Sniper",
+                "image": "/assets/images/skins/lesley-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Gusion",
+        "role": "Assassin",
+        "icon": "/assets/images/heroes/gusion-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/gusion-model.png",
+            "splash": "/assets/images/heroes/gusion-splash.jpg"
+        },
+        "stats": {
+            "attack": 9,
+            "defense": 3,
+            "speed": 8
+        },
+        "skills": [
+            {
+                "name": "Sword Spike",
+                "icon": "/assets/images/skills/gusion-skill1.jpg",
+                "description": "Throws daggers dealing 300(+150% Physical Attack) physical damage",
+                "cooldown": 10,
+                "manaCost": 90
+            },
+            {
+                "name": "Shadowblade Slaughter",
+                "icon": "/assets/images/skills/gusion-skill2.jpg",
+                "description": "Teleports to target dealing 400(+200% Physical Attack) physical damage",
+                "cooldown": 25,
+                "manaCost": 150
+            }
+        ],
+        "skins": [
+            {
+                "name": "Cyber Assassin",
+                "image": "/assets/images/skins/gusion-skin1.jpg"
+            },
+            {
+                "name": "Shadow Blade",
+                "image": "/assets/images/skins/gusion-skin2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Angela",
+        "role": "Support",
+        "icon": "/assets/images/heroes/angela-icon.jpg",
+        "images": {
+            "model": "/assets/images/heroes/angela-model.png",
+            "splash": "/assets/images/heroes/angela-splash.jpg"
+        },
+        "stats": {
+            "attack": 3,
+            "defense": 4,
+            "speed": 6
+        },
+        "skills": [
+            {
+                "name": "Love Waves",
+                "icon": "/assets/images/skills/angela-skill1.jpg",
+                "description": "Releases waves dealing 250(+100% Magic Power) magic damage",
+                "cooldown": 8,
+                "manaCost": 70
+            },
+            {
+                "name": "Heartguard",
+                "icon": "/assets/images/skills/angela-skill2.jpg",
+                "description": "Shields ally absorbing 500(+150% Magic Power) damage",
+                "cooldown": 15,
+                "manaCost": 100
+            }
+        ],
+        "skins": [
+            {
+                "name": "Doll Master",
+                "image": "/assets/images/skins/angela-skin1.jpg"
+            },
+            {
+                "name": "Sweet Fairy",
+                "image": "/assets/images/skins/angela-skin2.jpg"
+            }
+        ]
+    }
+]
