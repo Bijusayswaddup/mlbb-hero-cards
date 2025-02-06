@@ -10,7 +10,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const cssLink = document.getElementById('css');
+            const jsLink = document.getElementById('js');
             cssLink.href = window.location.origin + "/mlbb-hero-cards/styles/main.css";
+            jsLink.src = window.location.origin + "/mlbb-hero-cards/scripts/main.js";
         });
     </script>
 </head>
@@ -69,7 +71,7 @@
         <main id="hero-grid" class="hero-grid"></main>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <script id="js" src="scripts/main.js"></script>
 </body>
 
 </html>
