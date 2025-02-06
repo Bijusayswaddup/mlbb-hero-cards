@@ -67,7 +67,7 @@ function initializeApp() {
             loadingScreen.remove();
             document.querySelector('.container').classList.remove('hidden');
         }, 500);
-    }, 2000);
+    }, 5000);
 
     setupEventListeners();
     renderHeroGrid(allHeroes);
@@ -130,9 +130,9 @@ function showLoadingTips() {
     const tipInterval = setInterval(() => {
         currentTip = (currentTip + 1) % LOADING_TIPS.length;
         loadingTips.textContent = LOADING_TIPS[currentTip];
-    }, 1500);
+    }, 200);
 
-    setTimeout(() => clearInterval(tipInterval), 2000);
+    setTimeout(() => clearInterval(tipInterval), 5000);
 }
 
 // ========== NAVIGATION ==========
