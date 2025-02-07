@@ -33,47 +33,47 @@
         "skins": [
             {
                 "name": "Green Flash",
-                "image": "/assets/images/skins/layla-skin1.jpg"
+                "image": "assets/images/skins/layla-skin1.jpg"
             },
             {
                 "name": "Bunny Babe",
-                "image": "/assets/images/skins/layla-skin2.jpg"
+                "image": "assets/images/skins/layla-skin2.jpg"
             },
             {
                 "name": "Cannon and Roses",
-                "image": "/assets/images/skins/layla-skin3.jpg"
+                "image": "assets/images/skins/layla-skin3.jpg"
             },
             {
                 "name": "Blue Spectre",
-                "image": "/assets/images/skins/layla-skin4.jpg"
+                "image": "assets/images/skins/layla-skin4.jpg"
             },
             {
                 "name": "Classic Malefic Gunner",
-                "image": "/assets/images/skins/layla-skin5.jpg"
+                "image": "assets/images/skins/layla-skin5.jpg"
             },
             {
                 "name": "S.A.B.E.R. Breacher",
-                "image": "/assets/images/skins/layla-skin6.jpg"
+                "image": "assets/images/skins/layla-skin6.jpg"
             },
             {
                 "name": "Blazing Gun",
-                "image": "/assets/images/skins/layla-skin7.jpg"
+                "image": "assets/images/skins/layla-skin7.jpg"
             },
             {
                 "name": "Miss Hikari",
-                "image": "/assets/images/skins/layla-skin8.jpg"
+                "image": "assets/images/skins/layla-skin8.jpg"
             },
             {
                 "name": "Twilight Waltz",
-                "image": "/assets/images/skins/layla-skin9.jpg"
+                "image": "assets/images/skins/layla-skin9.jpg"
             },
             {
                 "name": "Sunset Waltz",
-                "image": "/assets/images/skins/layla-skin10.jpg"
+                "image": "assets/images/skins/layla-skin10.jpg"
             },
             {
                 "name": "Paranormal Operative",
-                "image": "/assets/images/skins/layla-skin11.jpg"
+                "image": "assets/images/skins/layla-skin11.jpg"
             }
         ]
     },
