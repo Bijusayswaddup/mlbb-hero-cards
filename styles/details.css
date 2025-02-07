@@ -320,3 +320,34 @@ body {
     font-size: 0.9rem;
   }
 }
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #ccc;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.clickable-image:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.008);
+}

@@ -56,7 +56,7 @@ function renderHeroDetails() {
                         Splash Art
                     </button>
                 </div>
-                <img class="gallery-image" 
+                <img class="gallery-image clickable-image" 
                     src="${window.location.origin}/mlbb-hero-cards/${currentHero.images[currentImageType]}" 
                     alt="${currentHero.name}">
             </section>
