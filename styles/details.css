@@ -35,20 +35,21 @@ body {
 }
 
 
-/* .hero-details-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 25%,
-    rgba(0, 243, 255, 0.1) 50%,
-    transparent 75%
-  );
-  animation: scanline 8s linear infinite;
+.hero-details-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 25%,
+        rgba(0, 243, 255, 0.1) 50%,
+        transparent 75%
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none; /* Allow clicks to pass through the animated layer */
 }
 
 @keyframes scanline {
@@ -58,7 +59,7 @@ body {
   100% {
     left: 100%;
   }
-} */
+}
 
 /* ========== BACK BUTTON ========== */
 .neon-back-btn {
@@ -325,16 +326,16 @@ body {
 }
 
 .image-modal {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modal-image {
@@ -345,25 +346,9 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 40px;
-  right: 10px;
+  top: 20px;
+  right: 30px;
   color: white;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 30px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.close-btn:hover {
-  color: #ccc;
-}
-
-body.modal-open {
-  overflow: hidden;
-}
-
-.clickable-image:hover {
-  opacity: 0.8;
-  cursor: pointer;
-  transform: scale(1.008);
 }

@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create modal elements
     const modal = document.createElement('div');
     modal.className = 'image-modal';
+    modal.style.display = 'none'; // Initially hide the modal
 
     const closeBtn = document.createElement('span');
     closeBtn.className = 'close-btn';
@@ -57,33 +58,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle click events for all clickable images
     document.querySelectorAll('.clickable-image').forEach(img => {
         img.addEventListener('click', function() {
-            modal.style.display = 'flex';
-            document.body.classList.add('modal-open');
-            modalImg.src = this.src;
-            modalImg.alt = this.alt || 'Enlarged view';
+            modalImg.src = this.src; // Set the source of the modal image
+            modalImg.alt = this.alt || 'Enlarged view'; // Set alt text
+            modal.style.display = 'flex'; // Show the modal
+            document.body.classList.add('modal-open'); // Add class to body
         });
     });
 
     // Close modal handlers
     closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
+        closeModal();
     });
 
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.classList.remove('modal-open');
+            closeModal();
         }
     });
 
     // Close with ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') {
-            modal.style.display = 'none';
-            document.body.classList.remove('modal-open');
+            closeModal();
         }
     });
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none'; // Hide the modal
+        document.body.classList.remove('modal-open'); // Remove class from body
+    }
 });
 
 // ========== RENDER FUNCTIONS ==========
@@ -181,7 +185,7 @@ function renderSkinCarousel() {
                      alt="${skin.name}">
                 <div class="skin-info">
                     <h3 class="skin-name">${skin.name}</h3>
-                    ${index === 0 ? '<span class="skin-badge">Default</span>' : ''}
+                    ${index === 0 ? '<span class="skin-badge"></span>' : ''}
                 </div>
             </div>
         `).join('')}
