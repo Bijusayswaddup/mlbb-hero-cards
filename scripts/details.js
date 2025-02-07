@@ -71,7 +71,7 @@ function renderHeroDetails() {
 
         <section class="skins-section">
             <h2 class="section-title">Skins</h2>
-            ${renderSkinCarousel()}
+            ${renderSkinSlider()}
         </section>
     `;
 
@@ -122,9 +122,9 @@ function renderSkillsSection() {
     </section>`;
 }
 
-function renderSkinCarousel() {
+function renderSkinSlider() {
     return `
-    <div class="skins-carousel">
+    <div class="skins-slider">
         ${currentHero.skins.map((skin, index) => `
             <div class="skin-card" data-index="${index}">
                 <img class="skin-image clickable-image" 
@@ -132,7 +132,6 @@ function renderSkinCarousel() {
                      alt="${skin.name}">
                 <div class="skin-info">
                     <h3 class="skin-name">${skin.name}</h3>
-                    ${index === 0 ? '<span class="skin-badge"></span>' : ''}
                 </div>
             </div>
         `).join('')}
@@ -163,8 +162,8 @@ function setupEventListeners() {
         });
     });
 
-    // Setup skin carousel
-    setupSkinCarousel();
+    // Setup skin slider
+    setupSkinSlider();
 
     // Full-screen image popup
     setupImagePopup();
@@ -176,11 +175,20 @@ function setupImagePopup() {
         openFullScreenImage(galleryImage.src, galleryImage.alt);
     });
 
-    // Setup clickable images in the skin carousel
+    // Setup clickable images in the skin slider
     const skinImages = document.querySelectorAll('.skin-image');
     skinImages.forEach(image => {
+        let clickCount = 0;
         image.addEventListener('click', () => {
-            openFullScreenImage(image.src, image.alt);
+            clickCount++;
+            setTimeout(() => {
+                if (clickCount === 1) {
+                    // Single click action (if needed)
+                } else if (clickCount === 2) {
+                    openFullScreenImage(image.src, image.alt);
+                }
+                clickCount = 0; // Reset click count
+            }, 300); // Delay for double-click detection
         });
     });
 }
@@ -216,61 +224,42 @@ function openFullScreenImage(src, alt) {
     });
 }
 
-function setupSkinCarousel() {
-    const carousel = document.querySelector('.skins-carousel');
-    const skinCards = carousel.querySelectorAll('.skin-card');
+function setupSkinSlider() {
+    const slider = document.querySelector('.skins-slider');
     let isDown = false;
     let startX;
     let scrollLeft;
 
-    // Clone the first and last items for infinite scrolling
-    const firstClone = skinCards[0].cloneNode(true);
-    const lastClone = skinCards[skinCards.length - 1].cloneNode(true);
-    carousel.appendChild(firstClone);
-    carousel.prepend(lastClone);
-
-    // Set the initial scroll position to the first clone
-    carousel.scrollLeft = 300; // Adjust based on the width of the skin cards
-
     // Mouse down event
-    carousel.addEventListener('mousedown', (e) => {
+    slider.addEventListener('mousedown', (e) => {
         isDown = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
     });
 
     // Mouse leave event
-    carousel.addEventListener('mouseleave', () => {
+    slider.addEventListener('mouseleave', () => {
         isDown = false;
     });
 
     // Mouse up event
-    carousel.addEventListener('mouseup', () => {
+    slider.addEventListener('mouseup', () => {
         isDown = false;
     });
 
     // Mouse move event
-    carousel.addEventListener('mousemove', (e) => {
+    slider.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
+        const x = e.pageX - slider.offsetLeft;
         const walk = (x - startX) * 2; // Adjust scroll speed
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-
-    // Infinite scroll logic
-    carousel.addEventListener('scroll', () => {
-        if (carousel.scrollLeft <= 0) {
-            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.clientWidth);
-        } else if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-            carousel.scrollLeft = 0;
-        }
+        slider.scrollLeft = scrollLeft - walk;
     });
 
     // Wheel event for mouse scroll
-    carousel.addEventListener('wheel', (e) => {
+    slider.addEventListener('wheel', (e) => {
         e.preventDefault();
-        carousel.scrollLeft += e.deltaY; // Scroll horizontally based on vertical scroll
+        slider.scrollLeft += e.deltaY; // Scroll horizontally based on vertical scroll
     });
 }
 

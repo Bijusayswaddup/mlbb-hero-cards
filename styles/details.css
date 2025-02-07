@@ -234,23 +234,21 @@ body {
   }
 }
 
-/* ========== SKINS CAROUSEL ========== */
+/* ========== SKINS SLIDER ========== */
 .skins-section {
   margin: 3rem 0;
 }
 
-.skins-carousel {
+.skins-slider {
   display: flex;
-  overflow-x: hidden; /* Hide scrollbar */
+  overflow-x: auto; /* Allow horizontal scrolling */
   gap: 1.5rem;
   padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .skin-card {
   flex: 0 0 300px; /* Fixed width for each skin card */
-  scroll-snap-align: start;
   background: #1a1a2e;
   border-radius: 15px;
   border: var(--cyber-border);
@@ -302,7 +300,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .skins-carousel {
+  .skins-slider {
     flex-wrap: nowrap;
   }
 }
