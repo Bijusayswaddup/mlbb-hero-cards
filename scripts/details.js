@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+
 // ========== DATA LOADING ==========
 async function loadHeroData() {
     const response = await fetch(HEROES_DATA_URL);
@@ -36,6 +37,54 @@ function getHeroIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get('id')) || DEFAULT_HERO_ID;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Create modal elements
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+
+    const modalImg = document.createElement('img');
+    modalImg.className = 'modal-image';
+
+    modal.appendChild(closeBtn);
+    modal.appendChild(modalImg);
+    document.body.appendChild(modal);
+
+    // Handle click events for all clickable images
+    document.querySelectorAll('.clickable-image').forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-open');
+            modalImg.src = this.src;
+            modalImg.alt = this.alt || 'Enlarged view';
+        });
+    });
+
+    // Close modal handlers
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+
+    // Close with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+});
 
 // ========== RENDER FUNCTIONS ==========
 function renderHeroDetails() {
