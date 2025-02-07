@@ -151,8 +151,8 @@ body {
 
 .gallery-image {
   width: 100%;
-  height: 563px;
-  object-fit: cover;
+  height: 410px;
+  object-fit: contain;
   border-radius: 15px;
   border: var(--cyber-border);
   animation: imageAppear 0.5s ease-out;
