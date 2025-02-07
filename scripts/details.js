@@ -223,8 +223,14 @@ function setupSkinCarousel() {
     let startX;
     let scrollLeft;
 
-    // Hide scrollbar
-    carousel.style.overflow = 'hidden'; // Hide scrollbar
+    // Clone the first and last items for infinite scrolling
+    const firstClone = skinCards[0].cloneNode(true);
+    const lastClone = skinCards[skinCards.length - 1].cloneNode(true);
+    carousel.appendChild(firstClone);
+    carousel.prepend(lastClone);
+
+    // Set the initial scroll position to the first clone
+    carousel.scrollLeft = 300; // Adjust based on the width of the skin cards
 
     // Mouse down event
     carousel.addEventListener('mousedown', (e) => {
@@ -252,19 +258,19 @@ function setupSkinCarousel() {
         carousel.scrollLeft = scrollLeft - walk;
     });
 
+    // Infinite scroll logic
+    carousel.addEventListener('scroll', () => {
+        if (carousel.scrollLeft <= 0) {
+            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.clientWidth);
+        } else if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+            carousel.scrollLeft = 0;
+        }
+    });
+
     // Wheel event for mouse scroll
     carousel.addEventListener('wheel', (e) => {
         e.preventDefault();
         carousel.scrollLeft += e.deltaY; // Scroll horizontally based on vertical scroll
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') {
-            carousel.scrollLeft += 100; // Scroll right
-        } else if (e.key === 'ArrowLeft') {
-            carousel.scrollLeft -= 100; // Scroll left
-        }
     });
 }
 

@@ -241,7 +241,7 @@ body {
 
 .skins-carousel {
   display: flex;
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-x: hidden; /* Hide scrollbar */
   gap: 1.5rem;
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
@@ -249,7 +249,7 @@ body {
 }
 
 .skin-card {
-  flex: 0 0 300px;
+  flex: 0 0 300px; /* Fixed width for each skin card */
   scroll-snap-align: start;
   background: #1a1a2e;
   border-radius: 15px;
