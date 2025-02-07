@@ -127,7 +127,7 @@ function renderSkinCarousel() {
     <div class="skins-carousel">
         ${currentHero.skins.map((skin, index) => `
             <div class="skin-card" data-index="${index}">
-                <img class="skin-image" 
+                <img class="skin-image clickable-image" 
                      src="${window.location.origin}/mlbb-hero-cards/${skin.image}" 
                      alt="${skin.name}">
                 <div class="skin-info">
