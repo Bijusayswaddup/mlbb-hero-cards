@@ -32,12 +32,8 @@ body {
   box-shadow: 0 0 40px rgba(0, 243, 255, 0.1);
   position: relative;
   overflow: hidden;
-  z-index: -2;
 }
 
-.hero-content{
-  z-index: 1;
-}
 
 .hero-details-container::before {
   content: "";
@@ -53,7 +49,6 @@ body {
     transparent 75%
   );
   animation: scanline 8s linear infinite;
-  z-index: -1;
 }
 
 @keyframes scanline {
