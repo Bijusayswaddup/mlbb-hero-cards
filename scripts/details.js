@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-
 // ========== DATA LOADING ==========
 async function loadHeroData() {
     const response = await fetch(HEROES_DATA_URL);
@@ -37,58 +36,6 @@ function getHeroIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get('id')) || DEFAULT_HERO_ID;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Create modal elements
-    const modal = document.createElement('div');
-    modal.className = 'image-modal';
-    modal.style.display = 'none'; // Initially hide the modal
-
-    const closeBtn = document.createElement('span');
-    closeBtn.className = 'close-btn';
-    closeBtn.innerHTML = '&times;';
-
-    const modalImg = document.createElement('img');
-    modalImg.className = 'modal-image';
-
-    modal.appendChild(closeBtn);
-    modal.appendChild(modalImg);
-    document.body.appendChild(modal);
-
-    // Handle click events for all clickable images
-    document.querySelectorAll('.clickable-image').forEach(img => {
-        img.addEventListener('click', function() {
-            modalImg.src = this.src; // Set the source of the modal image
-            modalImg.alt = this.alt || 'Enlarged view'; // Set alt text
-            modal.style.display = 'flex'; // Show the modal
-            document.body.classList.add('modal-open'); // Add class to body
-        });
-    });
-
-    // Close modal handlers
-    closeBtn.addEventListener('click', function() {
-        closeModal();
-    });
-
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Close with ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeModal();
-        }
-    });
-
-    // Function to close the modal
-    function closeModal() {
-        modal.style.display = 'none'; // Hide the modal
-        document.body.classList.remove('modal-open'); // Remove class from body
-    }
-});
 
 // ========== RENDER FUNCTIONS ==========
 function renderHeroDetails() {
@@ -216,35 +163,109 @@ function setupEventListeners() {
         });
     });
 
-    // Skin carousel navigation
+    // Setup skin carousel
+    setupSkinCarousel();
+
+    // Full-screen image popup
+    setupImagePopup();
+}
+
+function setupImagePopup() {
+    const galleryImage = document.querySelector('.gallery-image');
+    galleryImage.addEventListener('click', () => {
+        openFullScreenImage(galleryImage.src, galleryImage.alt);
+    });
+
+    // Setup clickable images in the skin carousel
+    const skinImages = document.querySelectorAll('.skin-image');
+    skinImages.forEach(image => {
+        image.addEventListener('click', () => {
+            openFullScreenImage(image.src, image.alt);
+        });
+    });
+}
+
+function openFullScreenImage(src, alt) {
+    // Create a full-screen overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'full-screen-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    overlay.style.display = 'flex';
+    overlay.style.justifyContent = 'center';
+    overlay.style.alignItems = 'center';
+    overlay.style.zIndex = '1000';
+
+    const fullImage = document.createElement('img');
+    fullImage.src = src;
+    fullImage.alt = alt;
+    fullImage.style.maxWidth = '90%';
+    fullImage.style.maxHeight = '90%';
+    fullImage.style.objectFit = 'contain';
+
+    overlay.appendChild(fullImage);
+    document.body.appendChild(overlay);
+
+    // Close the overlay when clicked
+    overlay.addEventListener('click', () => {
+        document.body.removeChild(overlay);
+    });
+}
+
+function setupSkinCarousel() {
     const carousel = document.querySelector('.skins-carousel');
-    if (carousel) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    const skinCards = carousel.querySelectorAll('.skin-card');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-        carousel.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
-        });
+    // Hide scrollbar
+    carousel.style.overflow = 'hidden'; // Hide scrollbar
 
-        carousel.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
+    // Mouse down event
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
 
-        carousel.addEventListener('mouseup', () => {
-            isDown = false;
-        });
+    // Mouse leave event
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
 
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2;
-            carousel.scrollLeft = scrollLeft - walk;
-        });
-    }
+    // Mouse up event
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    // Mouse move event
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust scroll speed
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Wheel event for mouse scroll
+    carousel.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        carousel.scrollLeft += e.deltaY; // Scroll horizontally based on vertical scroll
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            carousel.scrollLeft += 100; // Scroll right
+        } else if (e.key === 'ArrowLeft') {
+            carousel.scrollLeft -= 100; // Scroll left
+        }
+    });
 }
 
 // ========== ERROR HANDLING ==========

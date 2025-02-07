@@ -34,22 +34,21 @@ body {
   overflow: hidden;
 }
 
-
 .hero-details-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent 25%,
-        rgba(0, 243, 255, 0.1) 50%,
-        transparent 75%
-    );
-    animation: scanline 8s linear infinite;
-    pointer-events: none; /* Allow clicks to pass through the animated layer */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(0, 243, 255, 0.1) 50%,
+    transparent 75%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none; /* Allow clicks to pass through the animated layer */
 }
 
 @keyframes scanline {
@@ -90,7 +89,6 @@ body {
 .neon-back-btn:hover {
   transform: translateX(-5px);
   box-shadow: 0 0 25px var(--neon-blue);
-  color: white;
 }
 
 /* ========== HERO CONTENT ========== */
@@ -121,7 +119,7 @@ body {
 
 /* ========== IMAGE GALLERY ========== */
 .image-gallery {
-    padding: 20px;
+  padding: 20px;
   position: relative;
   margin: 2rem 0;
   border-radius: 15px;
@@ -158,7 +156,6 @@ body {
   border-radius: 15px;
   border: var(--cyber-border);
   animation: imageAppear 0.5s ease-out;
-  object-fit: contain;
 }
 
 @keyframes imageAppear {
@@ -175,8 +172,6 @@ body {
 /* ========== STATS & SKILLS ========== */
 .stats-section {
   display: block;
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-  /* gap: 2rem; */
   margin: 3rem 0;
 }
 
@@ -188,9 +183,9 @@ body {
   margin-bottom: 15px;
 }
 
-.stats-section h2{
-    text-transform: uppercase;
-    justify-self: center;
+.stats-section h2 {
+  text-transform: uppercase;
+  justify-self: center;
 }
 
 .stat-label {
@@ -246,11 +241,11 @@ body {
 
 .skins-carousel {
   display: flex;
-  overflow-x: auto;
+  overflow-x: auto; /* Allow horizontal scrolling */
   gap: 1.5rem;
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .skin-card {
@@ -287,8 +282,8 @@ body {
   }
 
   .grid {
-  display: block;
-}
+    display: block;
+  }
 
   .image-gallery {
     padding: 0;
@@ -323,32 +318,4 @@ body {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
-}
-
-.image-modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-image {
-  max-width: 90%;
-  max-height: 90vh;
-  object-fit: contain;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
 }
