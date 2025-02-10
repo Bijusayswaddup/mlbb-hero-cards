@@ -267,7 +267,7 @@ body {
   object-fit: cover;
 }
 
-.skincard:hover .skin-image{
+.skin-card:hover .skin-image{
   animation: enlarge1point5 1.5s infinite;
 }
 
