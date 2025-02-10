@@ -265,6 +265,9 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.skin-image:hover{
   animation: enlarge1point5 1.5s infinite;
 }
 
