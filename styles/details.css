@@ -265,7 +265,7 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  animation: enlarge1point5 2s infinite;
+  animation: enlarge1point5 1.5s infinite;
 }
 
 .skin-name {
@@ -326,6 +326,6 @@ body {
   }
 
   50%{
-      transform: scale(1.5);
+      transform: scale(1.09);
   }
 }
