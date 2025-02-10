@@ -245,6 +245,7 @@ body {
   gap: 1.5rem;
   padding: 1rem 0;
   scroll-behavior: smooth; /* Smooth scrolling */
+  scrollbar-width: none;
 }
 
 .skin-card {
